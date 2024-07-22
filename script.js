@@ -39,10 +39,8 @@
     \}\
 \
     function toAurebesh(text) \{\
-        const aurebeshMap = \{\
-            'A': '
-\f1 a
-\f0 ', 'B': '
+        const aurebeshMap = {
+             'A': '\f1 a\f0 ', 'B': '
 \f2 b
 \f0 ', 'C': '
 \f1 c
