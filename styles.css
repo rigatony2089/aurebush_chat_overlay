@@ -3,11 +3,18 @@
     src: url('https://rigatony2089.github.io/aurebush_chat_overlay/fonts/Aurebesh.otf') format('opentype');
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
 #chat-box {
-    position: fixed;
-    bottom: 10px; /* Adjust as needed */
-    left: 50%;
-    transform: translateX(-50%);
     width: 300px;
     max-height: 400px;
     overflow-y: auto;
