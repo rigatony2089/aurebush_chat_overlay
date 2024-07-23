@@ -30,12 +30,9 @@ body, html {
 }
 
 .message {
-    width: 100%;
-    margin: 0;
-    padding: 10px 0; /* Adjust padding as needed */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
+    position: relative;
+    margin: 5px 0;
+    perspective: 1000px;
 }
 
 .message-content {
