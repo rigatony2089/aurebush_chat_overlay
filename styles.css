@@ -27,12 +27,16 @@ body, html {
     padding: 10px;
     color: white;
     font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
 .message {
-    position: relative;
-    margin: 5px 0;
-    perspective: 1000px;
+    width: 100%;
+    margin: 0; /* Remove any default margin */
+    padding: 5px 0; /* Adjust padding if needed */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
 }
 
 .message-content {
@@ -41,6 +45,7 @@ body, html {
     transform-style: preserve-3d;
     position: relative;
     width: 100%;
+    text-align: center; /* Center text horizontally */
 }
 
 .message.flip .message-content {
