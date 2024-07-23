@@ -15,6 +15,10 @@ body, html {
 }
 
 #chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     max-height: 400px;
     overflow-y: auto;
