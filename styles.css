@@ -17,8 +17,7 @@ body, html {
 #chat-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* Align items to the top */
     width: 300px;
     max-height: 400px;
     overflow-y: auto;
@@ -32,8 +31,8 @@ body, html {
 
 .message {
     width: 100%;
-    margin: 0; /* Remove any default margin */
-    padding: 5px 0; /* Adjust padding if needed */
+    margin: 0;
+    padding: 5px 0; /* Adjust padding as needed */
     display: flex;
     justify-content: center; /* Center the content horizontally */
     align-items: center; /* Center the content vertically */
