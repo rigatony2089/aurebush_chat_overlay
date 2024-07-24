@@ -37,10 +37,6 @@ body, html {
     width: 100%;
 }
 
-.message.flip .message-content {
-    transform: rotateY(180deg);
-}
-
 .front, .back {
     position: absolute;
     width: 100%;
