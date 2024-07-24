@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Simulating receiving messages
-    receiveMessage("Hello, world!");
-    receiveMessage("How's it going?");
-    receiveMessage("Welcome to the stream!");
+    // Example messages to demonstrate functionality
+    receiveMessage("Hello, world!", "User1", "badge-url");
+    receiveMessage("How's it going?", "User2", "badge-url");
+    receiveMessage("Welcome to the stream!", "User3", "badge-url");
 
-    function receiveMessage(text) {
-        console.log('Received message:', text);  // Debugging line
+    // Function to receive and process chat messages
+    function receiveMessage(text, username, badgeUrl) {
         const chatBox = document.getElementById('chat-box');
         const messageElement = document.createElement('div');
         messageElement.className = 'message';
@@ -15,19 +15,59 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const front = document.createElement('div');
         front.className = 'front';
-        front.textContent = toAurebesh(text);
         
         const back = document.createElement('div');
         back.className = 'back';
-        back.textContent = text;
+        
+        const badges = document.createElement('img');
+        badges.className = 'badges';
+        badges.src = badgeUrl;
+        
+        const usernameElement = document.createElement('span');
+        usernameElement.className = 'username';
+        usernameElement.textContent = username + ": ";
+        
+        front.appendChild(badges);
+        front.appendChild(usernameElement);
+        
+        back.appendChild(badges.cloneNode(true));
+        back.appendChild(usernameElement.cloneNode(true));
+        
+        // Split the text into individual characters
+        const frontText = document.createElement('span');
+        const backText = document.createElement('span');
+        
+        for (let i = 0; i < text.length; i++) {
+            const frontChar = document.createElement('span');
+            frontChar.textContent = toAurebesh(text[i]);
+            frontText.appendChild(frontChar);
+            
+            const backChar = document.createElement('span');
+            backChar.textContent = text[i];
+            backChar.style.display = 'none'; // Initially hide the back characters
+            backText.appendChild(backChar);
+        }
+        
+        front.appendChild(frontText);
+        back.appendChild(backText);
         
         messageContent.appendChild(front);
         messageContent.appendChild(back);
         messageElement.appendChild(messageContent);
         chatBox.appendChild(messageElement);
         
+        // Delay the flip effect
         setTimeout(() => {
-            messageElement.classList.add('flip');
+            // Flip each character individually
+            const frontChars = frontText.children;
+            const backChars = backText.children;
+            
+            for (let i = 0; i < frontChars.length; i++) {
+                setTimeout(() => {
+                    frontChars[i].style.display = 'none';
+                    backChars[i].style.display = 'inline';
+                }, i * 100); // Adjust the timing for each character flip
+            }
         }, 2000);  // 2 seconds delay
     }
 
