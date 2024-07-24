@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (let i = 0; i < text.length; i++) {
             const frontChar = document.createElement('span');
             frontChar.textContent = toAurebesh(text[i]);
+            frontChar.style.display = 'inline';
             frontText.appendChild(frontChar);
             
             const backChar = document.createElement('span');
