@@ -1,24 +1,30 @@
 @font-face {
     font-family: 'Aurebesh';
-    src: url('https://rigatony2089.github.io/aurebush_chat_overlay/fonts/Aurebesh.otf') format('truetype');
+    src: url('https://rigatony2089.github.io/aurebush_chat_overlay/fonts/Aurebesh.otf') format('opentype');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
 }
 
 #chat-box {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 300px;
-    max-height: 400px;
+    width: 100%;
+    max-height: 100vh;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
     padding: 10px;
     color: white;
     font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
 .message {
-    position: relative;
     margin: 5px 0;
     perspective: 1000px;
 }
@@ -29,10 +35,6 @@
     transform-style: preserve-3d;
     position: relative;
     width: 100%;
-}
-
-.message.flip .message-content {
-    transform: rotateY(180deg);
 }
 
 .front, .back {
@@ -49,4 +51,13 @@
 
 .back {
     transform: rotateY(180deg);
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.badges {
+    margin-right: 5px;
 }
